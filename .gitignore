@@ -1,0 +1,8 @@
+.DS_Store
+Assets/GoogleVR/
+Library/
+Temp/
+Assets/GoogleVR.meta
+*.csproj
+*.sln
+*.suo
