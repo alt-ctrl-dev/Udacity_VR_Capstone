@@ -30,7 +30,7 @@ public class VideoPlayerController : MonoBehaviour {
 
     public void PlayVideo()
     {
-        if (videoPlayer == null)
+        if (videoPlayer != null)
         {
             if (!videoPlayer.isPlaying) videoPlayer.Play();
             hints.SetActive(true);
