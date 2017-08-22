@@ -21,6 +21,7 @@ public class holdPiece : MonoBehaviour {
 		
 	}
 	public void grabPiece(GameObject selectedPiece) {
+        if (pieceBeingHeld != null) return;
         if (selectedPiece.GetComponent<PlayerPiece>().hasBeenPlayed == false) {
             pieceBeingHeld = selectedPiece;
             holdingPiece = true;
@@ -62,6 +63,7 @@ public class holdPiece : MonoBehaviour {
                             pieceBeingHeld.GetComponent<Rigidbody>().useGravity = true;
                             pieceBeingHeld.GetComponent<BoxCollider>().enabled = true;
                             GameLogic.GetComponent<GameLogic>().playerMove(hit.collider.gameObject);
+                            pieceBeingHeld = null;
                         }
 
                     }
