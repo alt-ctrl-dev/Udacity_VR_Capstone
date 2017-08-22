@@ -109,12 +109,7 @@ public class GameLogic : MonoBehaviour {
             restartText.text = "Draw!";
         }
         
-
-        //Right now just loop but make this contingent on play again action
-        
         restartPanel.SetActive(true);
-        
-
     }
     public void newGame() {
         gameEnded = false;
@@ -132,16 +127,16 @@ public class GameLogic : MonoBehaviour {
         for(int i =0; i <9;i++) {
             if (selectedPlate == gridPlates[i]) {
                 boardRepresentation[i] = 1;
-                
+                GetComponent<holdPiece>().pieceBeingHeld.transform.position =
+                    new Vector3(selectedPlate.transform.position.x, gridPlates[i].transform.position.y + 0.3f, gridPlates[i].transform.position.z);
+
             }
-            //Debug.Log(boardRepresentation[i]);
         }
         playerTurn = false;
         Invoke("checkForVictory", 1);
         if (gameEnded == false) {
             AIFace.text = ":/";
             Invoke("AIMove", 2);
-            //AIMove();
         }
         
     }
