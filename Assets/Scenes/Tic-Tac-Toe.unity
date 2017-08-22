@@ -14921,6 +14921,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1783611069}
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1218552627}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -15730,6 +15741,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1783611069}
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1433538007}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -16302,6 +16324,10 @@ GameObject:
   m_PrefabParentObject: {fileID: 1737202210725220, guid: f833cdf1256a2344c967c20382af3ec8,
     type: 2}
   m_PrefabInternal: {fileID: 1690846585}
+--- !u!1 &1610587020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 177758, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+  m_PrefabInternal: {fileID: 974396715}
 --- !u!1 &1619333565 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1771237635386910, guid: 2d725b2ee5bbafd4dba88eaea1495599,
@@ -16593,6 +16619,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1783611070}
+  - component: {fileID: 1783611069}
   m_Layer: 0
   m_Name: Navigation
   m_TagString: Untagged
@@ -16600,6 +16627,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1783611069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1783611068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4be197aaed209045b01992cd4e9dde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view_object: {fileID: 1610587020}
+  speed: 0.05
 --- !u!4 &1783611070
 Transform:
   m_ObjectHideFlags: 0
@@ -18154,7 +18194,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1783611069}
           m_MethodName: MoveTo
           m_Mode: 2
           m_Arguments:
