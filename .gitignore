@@ -8,3 +8,4 @@ Assets/GoogleVR.meta
 *.suo
 Assets/Plugins/
 Assets/Plugins.meta
+obj/
