@@ -5353,7 +5353,7 @@ MonoBehaviour:
   sourceSpatialBlend: 1
   sourceDopplerLevel: 1
   sourceSpread: 0
-  sourceVolume: 1
+  sourceVolume: 0.6
   sourceRolloffMode: 0
   sourceMaxDistance: 500
   sourceMinDistance: 1
@@ -13838,6 +13838,7 @@ GameObject:
   - component: {fileID: 1169339519}
   - component: {fileID: 1169339523}
   - component: {fileID: 1169339518}
+  - component: {fileID: 1169339524}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13940,6 +13941,13 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!81 &1169339524
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169339517}
+  m_Enabled: 1
 --- !u!1 &1185440321 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1167931277408348, guid: f66f6856cb13bef4fb7e2030d6cd07c9,
