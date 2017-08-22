@@ -6,3 +6,5 @@ Assets/GoogleVR.meta
 *.csproj
 *.sln
 *.suo
+Assets/Plugins/
+Assets/Plugins.meta
