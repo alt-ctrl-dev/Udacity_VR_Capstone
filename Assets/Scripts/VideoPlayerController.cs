@@ -6,14 +6,14 @@ using UnityEngine.Video;
 
 public class VideoPlayerController : MonoBehaviour {
     VideoPlayer videoPlayer;
-    GvrAudioSource listener;
+    GvrAudioSource audioSource;
     public GameObject hints;
 
     // Use this for initialization
     void Start () {
         videoPlayer = GetComponent<VideoPlayer>();
 
-        listener = GetComponent<GvrAudioSource>();
+        audioSource = GetComponent<GvrAudioSource>();
 
         // Each time we reach the end, we slow down the playback by a factor of 10.
         videoPlayer.loopPointReached += VideoPlayer_loopPointReached;
@@ -23,16 +23,16 @@ public class VideoPlayerController : MonoBehaviour {
 
     private void VideoPlayer_started(VideoPlayer source)
     {
-        if (!listener.isPlaying)
-            listener.Play();
+        if (!audioSource.isPlaying)
+            audioSource.Play();
     }
 
     private void VideoPlayer_loopPointReached(VideoPlayer source)
     {
         hints.SetActive(false);
         gameObject.SetActive(false);
-        if (listener.isPlaying)
-            listener.Stop();
+        if (audioSource.isPlaying)
+            audioSource.Stop();
     }
 
     // Update is called once per frame
