@@ -6,9 +6,6 @@ public class Navigation : MonoBehaviour
     //the viewer's game object
     public GameObject view_object = null;
 
-    //speed at which we move between waypoints
-    public float speed = 0.05f;
-
 
     void Start () 
 	{
