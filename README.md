@@ -8,3 +8,4 @@ The focus is on mobile optimization.
 ## Built using
 - Unity 2017.1.0f3
 - Google VR sdk v1.70.0
+- iTween
