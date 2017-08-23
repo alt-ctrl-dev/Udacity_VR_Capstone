@@ -26,6 +26,7 @@ public class GameLogic : MonoBehaviour {
     public int AIMoveCount = 0;
 
     public GameObject[] gridPlates;
+    public GameObject helpPanel;
 
     // Use this for initialization
     void Start() {
@@ -137,7 +138,17 @@ public class GameLogic : MonoBehaviour {
         
     }
 
+    public void StartTimeoutHelp()
+    {
+        StartCoroutine(StartCountdown());
 
+    }
+
+    private IEnumerator StartCountdown()
+    {
+        yield return new WaitForSeconds(10.0f);
+        helpPanel.SetActive(false);
+    }
 
     public void checkForVictory() {
         //We are doing this elegantly, but that's fine.  There are only 8 possible win conditions in tic tac toe
