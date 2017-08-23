@@ -31,10 +31,6 @@ public class GameLogic : MonoBehaviour {
     void Start() {
         AIFace.text = ":)";
 
-        for (int i = 0; i < 9; i++) {
-            gridPlates[i].GetComponent<ParticleSystem>().Stop();
-        }
-
         //Save our intial positions for a reset
         for (int i =0; i<5; i++) {
             PlayerPiecePositions[i] = PlayerPieces[i].transform.position;
