@@ -1139,10 +1139,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Didn''t think it would be that easy would you?
-
-
-    To escape the room, you need to tell me how you feel by choosing a button'
+  m_Text: To complete the experience, you need to tell me how you feel by choosing
+    a button
 --- !u!222 &343891299
 CanvasRenderer:
   m_ObjectHideFlags: 0
