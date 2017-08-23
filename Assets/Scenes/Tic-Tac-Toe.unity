@@ -392,8 +392,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To escape the room, defeat the robot at a game of tic tac toe and then you
-    should be able to open the door.
+  m_Text: 'Welcome to this experience!
+
+    Play a game of Tic Tac Toe or watch a video on the TV.
+
+    Look around.'
 --- !u!222 &120524514
 CanvasRenderer:
   m_ObjectHideFlags: 0
