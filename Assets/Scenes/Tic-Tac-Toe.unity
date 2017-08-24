@@ -3872,17 +3872,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 903280700}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0102}
-  m_LocalScale: {x: 0.000049816957, y: 0.000052105064, z: 0.00008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.538}
+  m_LocalScale: {x: 0.0049816957, y: 0.0052105067, z: 0.007999999}
   m_Children:
   - {fileID: 1434857342}
-  m_Father: {fileID: 1442422709}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_Father: {fileID: 1632848225}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.00692, y: 0}
+  m_AnchoredPosition: {x: 0.017, y: 1.283}
   m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903280702
@@ -4507,7 +4507,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1433538007}
         m_MethodName: SetActive
@@ -4518,7 +4518,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 903280700}
         m_MethodName: SetActive
@@ -6061,7 +6061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6077,7 +6077,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400090, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 41
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 400082, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6089,7 +6089,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 40
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6101,7 +6101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 400086, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6113,7 +6113,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6121,7 +6121,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400088, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6149,7 +6149,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6157,7 +6157,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
@@ -6165,7 +6165,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_RootOrder
-      value: 43
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: fb0f1657f78a242668dc54236d165f3c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6245,7 +6245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1218552628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6305,7 +6305,7 @@ Transform:
   m_GameObject: {fileID: 1218552627}
   m_LocalRotation: {x: -0, y: -0.7109178, z: -0, w: 0.70327514}
   m_LocalPosition: {x: -0.283, y: 0, z: 1.979}
-  m_LocalScale: {x: 0.05, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.05, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1783611070}
   m_RootOrder: 1
@@ -6368,7 +6368,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1433538007}
           m_MethodName: SetActive
@@ -7270,7 +7270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1433538008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7318,7 +7318,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1218552627}
           m_MethodName: SetActive
@@ -7329,7 +7329,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1398705250}
           m_MethodName: SetActive
@@ -7503,7 +7503,7 @@ Transform:
   m_GameObject: {fileID: 1433538007}
   m_LocalRotation: {x: -0, y: -0.7109178, z: -0, w: 0.70327514}
   m_LocalPosition: {x: 1.967, y: 0, z: 1.979}
-  m_LocalScale: {x: 0.05, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.05, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1783611070}
   m_RootOrder: 2
@@ -8268,6 +8268,7 @@ Transform:
   - {fileID: 861083765}
   - {fileID: 684112218}
   - {fileID: 133354689}
+  - {fileID: 903280701}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -90.619, z: 0}
@@ -10298,7 +10299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Look at my Cardboard viewer from my real life
+  m_Text: Have you found my Cardboard viewer?
 --- !u!222 &2070911830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10393,7 +10394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &2086733827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10453,7 +10454,7 @@ Transform:
   m_GameObject: {fileID: 2086733826}
   m_LocalRotation: {x: -0, y: -0.7109178, z: -0, w: 0.70327514}
   m_LocalPosition: {x: 1.405, y: 0, z: -1.0749999}
-  m_LocalScale: {x: 0.05, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.05, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1783611070}
   m_RootOrder: 0
@@ -10527,7 +10528,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 2086733826}
           m_MethodName: SetActive
