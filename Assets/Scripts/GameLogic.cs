@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System;
+using UnityEngine.Networking;
 
 public class GameLogic : MonoBehaviour {
     public bool playerTurn = true;
@@ -27,6 +30,10 @@ public class GameLogic : MonoBehaviour {
 
     public GameObject[] gridPlates;
     public GameObject helpPanel;
+
+    private const string url = "http://perfecttictactoe.herokuapp.com/api/v2/play";
+
+    //private int Choice = 0;
 
     // Use this for initialization
     void Start() {
@@ -71,23 +78,128 @@ public class GameLogic : MonoBehaviour {
         //Check for Victory
         //Switch it to the player's turn.
         if (playerTurn == false && gameEnded == false) {
+            StartCoroutine(GetBestMove(movePosition => {
+                Debug.Log("Best Move = "+ movePosition);
 
-            for (int i = 0; i > -1; i++) {
-                int movePosition = Random.Range(0, 9); //Generate a random movement position
-                if (boardRepresentation[movePosition] == 0) { //See if that slot is open
+                if (boardRepresentation[movePosition] == 0)
+                { //See if that slot is open
                     boardRepresentation[movePosition] = 2; //If it's open, set it to our AI move
 
                     AIPieces[AIMoveCount].transform.position = new Vector3(gridPlates[movePosition].transform.position.x, gridPlates[movePosition].transform.position.y + 0.3f, gridPlates[movePosition].transform.position.z);
                     AIMoveCount++;
-
-                    i = -5; //Escape the for loop
                 }
+
+                Invoke("checkForVictory", 1);
+                playerTurn = true; //Set the player turn again.
+                AIFace.text = ":)";
+            }));
+            
+        }
+    }
+
+    private IEnumerator GetBestMove(Action<int> result)
+    {
+        var jsonString = "{\"player_piece\": \"o\",\"opponent_piece\": \"x\", " +
+            "\"board\": [{"+
+        "\"id\": \"top-left\",\"value\": \"" +
+        (boardRepresentation[0]==1?"x": (boardRepresentation[0] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"top-center\",\"value\": \"" +
+        (boardRepresentation[1] == 1 ? "x" : (boardRepresentation[1] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"top-right\",\"value\": \"" +
+        (boardRepresentation[2] == 1 ? "x" : (boardRepresentation[2] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"middle-left\",\"value\": \"" +
+        (boardRepresentation[3] == 1 ? "x" : (boardRepresentation[3] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"middle-center\",\"value\": \"" +
+        (boardRepresentation[4] == 1 ? "x" : (boardRepresentation[4] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"middle-right\",\"value\": \"" +
+        (boardRepresentation[5] == 1 ? "x" : (boardRepresentation[5] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"bottom-left\",\"value\": \"" +
+        (boardRepresentation[6] == 1 ? "x" : (boardRepresentation[6] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"bottom-center\",\"value\": \"" +
+        (boardRepresentation[7] == 1 ? "x" : (boardRepresentation[7] == 2 ? "o" : "")) + "\"" +
+        "}, {" +
+        "\"id\": \"bottom-right\",\"value\": \"" +
+        (boardRepresentation[8] == 1 ? "x" : (boardRepresentation[8] == 2 ? "o" : "")) + "\"" +
+        "}]}";
+
+        using (UnityWebRequest request = new UnityWebRequest(url,"POST"))
+        {
+            byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(jsonString);
+            request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+            yield return request.Send();
+
+            if (request.isNetworkError || request.isHttpError)
+            {
+                Debug.Log(request.error);
+                result(-1);
+                int movePosition = -1; ;
+                for (int i = 0; i > -1; i++)
+                {
+                    movePosition = UnityEngine.Random.Range(0, 9); //Generate a random movement position
+                    if (boardRepresentation[movePosition] == 0) break;
+                }
+                result(movePosition);
             }
+            else
+            {
+                Debug.Log("Post complete!");
+                var jsonObject = JsonUtility.FromJson<MinimaxResponse>(request.downloadHandler.text);
 
+                var index = -1;                
+                for (int i = 0; i < jsonObject.data.board.Length; i++)
+                {
+                    index = -1;
+                    switch (jsonObject.data.board[i].id)
+                    {
+                        case "top-left":
+                            index = 0;
+                            break;
+                        case "top-center":
+                            index = 1;
+                            break;
+                        case "top-right":
+                            index = 2;
+                            break;
+                        case "middle-left":
+                            index = 3;
+                            break;
+                        case "middle-center":
+                            index = 4;
+                            break;
+                        case "middle-right":
+                            index = 5;
+                            break;
+                        case "bottom-left":
+                            index = 6;
+                            break;
+                        case "bottom-center":
+                            index = 7;
+                            break;
+                        case "bottom-right":
+                            index = 8;
+                            break;
+                    }
+                    if (!string.IsNullOrEmpty(jsonObject.data.board[i].value))
+                    {
+                        if (boardRepresentation[index] == 0)
+                        {
+                            if (jsonObject.data.board[i].value == "o")
+                            { break; }
+                        }
+                    }
 
-            Invoke("checkForVictory", 1);
-            playerTurn = true; //Set the player turn again.
-            AIFace.text = ":)";
+                }
+                result(index);
+            }
         }
     }
 
@@ -108,6 +220,7 @@ public class GameLogic : MonoBehaviour {
         
         restartPanel.SetActive(true);
     }
+
     public void newGame() {
         gameEnded = false;
         AIMoveCount = 0;
@@ -141,7 +254,6 @@ public class GameLogic : MonoBehaviour {
     public void StartTimeoutHelp()
     {
         StartCoroutine(StartCountdown());
-
     }
 
     private IEnumerator StartCountdown()
@@ -256,4 +368,26 @@ public class GameLogic : MonoBehaviour {
         }
     }
 
+}
+
+[System.Serializable]
+internal struct MinimaxResponse
+{
+    public string status;
+    public MinimaxData data;
+
+    [System.Serializable]
+    public struct MinimaxData
+    {
+        public string player_piece;
+        public string opponent_piece;
+        public BoardData[] board;
+
+        [System.Serializable]
+        public struct BoardData
+        {
+            public string id;
+            public string value;
+        }
+    }
 }
