@@ -5054,6 +5054,7 @@ MonoBehaviour:
   - {fileID: 963691726}
   - {fileID: 1086733263}
   helpPanel: {fileID: 459701298}
+  ticTacToeObject: {fileID: 157113581}
 --- !u!4 &1108107847
 Transform:
   m_ObjectHideFlags: 0
@@ -6472,6 +6473,17 @@ MonoBehaviour:
         - m_Target: {fileID: 754802737}
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1108107846}
+          m_MethodName: LeaveWaypoint
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10643,6 +10655,17 @@ MonoBehaviour:
         - m_Target: {fileID: 754802737}
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1108107846}
+          m_MethodName: newGame
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
