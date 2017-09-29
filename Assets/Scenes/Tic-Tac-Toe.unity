@@ -396,7 +396,7 @@ MonoBehaviour:
 
     Play a game of Tic Tac Toe or watch a video on the TV.
 
-    Select ok and then look around.'
+    Select or look at ok and then look around.'
 --- !u!222 &120524514
 CanvasRenderer:
   m_ObjectHideFlags: 0
