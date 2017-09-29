@@ -34,6 +34,8 @@ public class GameLogic : MonoBehaviour
 
     public GameObject ticTacToeObject;
 
+	public GvrReticlePointer pointer;
+
     private const string url = "http://perfecttictactoe.herokuapp.com/api/v2/play";
 
     //private int Choice = 0;
@@ -109,6 +111,7 @@ public class GameLogic : MonoBehaviour
                     AIMoveCount++;
                 }
 
+					pointer.gameObject.SetActive (true);
                 Invoke("checkForVictory", 1);
                 playerTurn = true; //Set the player turn again.
                 AIFace.text = ":)";
@@ -285,6 +288,7 @@ public class GameLogic : MonoBehaviour
         if (gameEnded == false)
         {
             AIFace.text = ":/";
+			pointer.gameObject.SetActive (false);
             Invoke("AIMove", 0.8f);
         }
 
