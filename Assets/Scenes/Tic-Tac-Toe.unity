@@ -486,6 +486,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133354688}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &140812546 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 723926960, guid: 60270cf52a5e94998a5a335989159738,
+    type: 2}
+  m_PrefabInternal: {fileID: 1685291490}
+  m_Script: {fileID: 11500000, guid: e7dcc90c2e60c4011896c7f21fc1f557, type: 3}
 --- !u!1001 &149588081
 Prefab:
   m_ObjectHideFlags: 0
@@ -5377,6 +5383,7 @@ MonoBehaviour:
   - {fileID: 1086733263}
   helpPanel: {fileID: 459701298}
   ticTacToeObject: {fileID: 157113581}
+  pointer: {fileID: 140812546}
 --- !u!4 &1108107847
 Transform:
   m_ObjectHideFlags: 0
